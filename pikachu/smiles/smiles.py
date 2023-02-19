@@ -139,7 +139,7 @@ def make_character_dict() -> Dict[str, str]:
     """
     character_dict = {}
     atoms = ["C", "O", "N", "S", "B", "P", "F", "I", "c", "n", "o", r'*',
-             'Cl', 'Br', 'p', 'b', 'p', 's']
+             'Cl', 'Br', 'p', 'b', 'p', 's', 'Se']
     cyclic = list(range(1, 100))
 
     for atom in atoms:

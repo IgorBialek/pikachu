@@ -280,12 +280,12 @@ class Atom:
                     if nr_of_nonH_bonds > bonding_electrons:
                         if self.excitable:
                             self.excite()
-                        else:
+                        # else:
 
-                            raise StructureError('violated_bonding_laws')
+                        #     raise StructureError('violated_bonding_laws')
 
-                else:
-                    raise StructureError('violated_bonding_laws')
+                # else:
+                #     raise StructureError('violated_bonding_laws')
 
     def get_bonding_electrons(self):
         counter = 0

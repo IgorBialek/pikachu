@@ -210,7 +210,7 @@ class Bond:
             else:
                 print(self.atom_1)
                 self.atom_1.valence_shell.print_shell()
-                raise StructureError("sigma bond")
+                # raise StructureError("sigma bond")
 
         s_bonding_orbitals_2 = self.atom_2.get_hybrid_orbitals('s')
         for orbital in s_bonding_orbitals_2:
@@ -229,19 +229,21 @@ class Bond:
             else:
                 print(self.atom_2)
                 self.atom_2.valence_shell.print_shell()
-                raise StructureError("sigma bond")
+                # raise StructureError("sigma bond")
 
-        electron_1 = s_bonding_orbital_1.electrons[0]
-        electron_2 = s_bonding_orbital_2.electrons[0]
+        if  s_bonding_orbital_1 and  s_bonding_orbital_1:
 
-        self.electrons.append(electron_1)
-        self.electrons.append(electron_2)
+            electron_1 = s_bonding_orbital_1.electrons[0]
+            electron_2 = s_bonding_orbital_2.electrons[0]
 
-        s_bonding_orbital_1.add_electron(electron_2)
-        s_bonding_orbital_2.add_electron(electron_1)
+            self.electrons.append(electron_1)
+            self.electrons.append(electron_2)
 
-        s_bonding_orbital_1.set_bond(self, 'sigma')
-        s_bonding_orbital_2.set_bond(self, 'sigma')
+            s_bonding_orbital_1.add_electron(electron_2)
+            s_bonding_orbital_2.add_electron(electron_1)
+
+            s_bonding_orbital_1.set_bond(self, 'sigma')
+            s_bonding_orbital_2.set_bond(self, 'sigma')
 
     def make_single(self):
 
